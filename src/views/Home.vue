@@ -6,16 +6,17 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      My App
+      <ZipSearch/>
     </ion-content>
   </div>
 </template>
 
 <script>
-
+import ZipSearch from '../components/ZipSearch'
 export default {
   name: 'Home',
   components: {
+    ZipSearch
   }
 }
 </script>
