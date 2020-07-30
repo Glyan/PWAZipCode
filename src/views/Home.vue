@@ -8,6 +8,7 @@
     <ion-content class="ion-padding">
       <ZipSearch v-on:get-zip="getZipInfo" />
       <ZipInfo v-bind:info="info" />
+      <ClearInfo v-bind:info="info" v-on:clear-info="clearInfo" />
     </ion-content>
   </div>
 </template>
@@ -15,11 +16,13 @@
 <script>
 import ZipSearch from "../components/ZipSearch";
 import ZipInfo from "../components/ZipInfo";
+import ClearInfo from "../components/ClearInfo";
 export default {
   name: "Home",
   components: {
     ZipSearch,
-    ZipInfo
+    ZipInfo,
+    ClearInfo
   },
   data () {
     return {
@@ -43,6 +46,10 @@ export default {
           buttons: ["OK"],
         })
         .then((a) => a.present());
+    },
+
+    clearInfo() {
+      this.info = null;
     }
   }
 };
